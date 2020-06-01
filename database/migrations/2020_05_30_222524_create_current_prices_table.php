@@ -16,6 +16,7 @@ class CreateCurrentPricesTable extends Migration
         Schema::create('current_prices', function (Blueprint $table) {
             $table->bigInteger('date')->primary();
             $table->decimal('amount', 5, 2);
+            $table->timestamps();
         });
     }
 

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CurrentPrice extends Model
 {
-    protected $table = 'current_price';
+    protected $table = 'current_prices';
 
     protected $fillable = [
         'date', 'amount',
