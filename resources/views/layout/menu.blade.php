@@ -84,6 +84,7 @@
                 padding: 10px;
                 font-size: 17px;
                 text-align: center;
+                margin-block-end: auto;
             }
         </style>
     </head>

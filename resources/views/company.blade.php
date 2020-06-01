@@ -23,11 +23,15 @@
                 width: 90px;
                 border:0px solid #000;
             }
+            .nowDate {
+                background-color: beige;
+            }
         </style>
     </head>
     <body>
         @section('sidebar')
         @section('content')
+            @include('layout.errors')
             <!-- 公司資訊 -->
             <div class="companyData">
                 <h1 class="content">公司資訊<h1>
@@ -83,17 +87,49 @@
                 <label for="task" class="col-sm-3 control-label">當前時價</label>
                 <table>
                     <tr>
+                        <td>修改</td>
                         <td>日期</td>
                         <td>時價</td>
+                        <td></td>
                     </tr>
                     @foreach ($amountLis as $aV)
-                    <tr>
-                        <td>{{$aV->date}}</td>
-                        <td>{{$aV->amount}}</td>
-                    </tr>
+
+                    <form action="/current" role="form" method="POST" class="form-horizontal">
+                        @csrf
+                        <input type="hidden" class="form-control" id="act" name="act" value="update">
+                        @if ($aV->date == $nowDate)
+                        <tr class="nowDate">
+                        @else
+                        <tr>
+                        @endif
+                            <td><a href="javascript:void(0)" onclick="change('{{$aV->date}}')">編輯</a></td>
+                            <td><input type="text" readonly class="form-control" name="date" value="{{$aV->date}}"></td>
+                            <td><input type="text" id="{{$aV->date}}-amount" disabled class="form-control" name="amount" value="{{$aV->amount}}"></td>
+                            <td>                                    
+                                <button type="submit" id="{{$aV->date}}-submit" disabled class="submit btn btn-default">
+                                    <i class="fa fa-plus"></i>修改
+                                </button>
+                            </td>
+                        </tr>
+                    </form>
                     @endforeach
                 </table>
             </div>
         @endsection
     </body>
 </html>
+<script>
+    function change(value) {
+        amount = value + "-amount";
+        submit = value + "-submit";
+        changeYes = document.getElementById(amount);
+        if (changeYes.disabled == true) {
+            document.getElementById(amount).disabled = false
+            document.getElementById(submit).disabled = false
+        } else {
+            document.getElementById(amount).disabled = true
+            document.getElementById(submit).disabled = true
+        }
+
+    }
+</script>

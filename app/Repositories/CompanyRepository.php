@@ -48,14 +48,14 @@ class CompanyRepository
             break;
             
             case 'update' :
-                // $this->priceUpdate($request);
+                $this->priceUpdate($request);
             break;
             default :
             break;
         }
     }
 
-    private function priceInsert($request)
+    private function priceInsert ($request)
     {
         $beginDate = $request->beginDate;
         $endDate = $request->endDate;
@@ -65,5 +65,10 @@ class CompanyRepository
             $date = $beginDate + $i;
             CurrentPrice::create(['date' => $date, 'amount' => $request->amount]);
         }
+    }
+
+    private function priceUpdate ($request)
+    {
+        CurrentPrice::where('date', $request->date)->update(['amount' => $request->amount]);
     }
 }
