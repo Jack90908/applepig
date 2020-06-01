@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link href="/css/app.css" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -46,7 +46,7 @@
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 16px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -78,22 +78,30 @@
                 width:85%;
                 height:100vh;
             }
+            .applepig {
+                background-color: #bef946;
+                height: 15px;
+                padding: 10px;
+                font-size: 17px;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
+    <script src="/js/app.js"></script>
         @section('sidebar')
             <div class="leftmenu">
+                <p class="applepig">--蘋果豬內部系統--</p>
                 <a href="{{ url('/') }}">雅庫/時價設定</a>
-                <hr>
+                <p class="applepig">供應商</p>
                 <a href="{{ url('/supply') }}">供應商基本資訊</a>
                 <a href="{{ url('/supply') }}">新增/修改</a>
-                <hr>
+                <p class="applepig">需求商</p>
                 <a href="{{ url('/supply') }}">需求商基本資訊</a>
                 <a href="{{ url('/supply') }}">新增/修改</a>
-                <hr>
+                <p class="applepig">交易</p>
                 <a href="{{ url('/supply') }}">進貨</a>
                 <a href="{{ url('/supply') }}">出貨</a>
-                <hr>
                 <a href="{{ url('/supply') }}">報表</a>
             </div>
         @show
