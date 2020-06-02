@@ -1,7 +1,6 @@
 <?php
 namespace DummyNamespace;
 
-use app\Models\DummyClass;
 class DummyClass
 {
 

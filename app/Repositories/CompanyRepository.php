@@ -11,7 +11,8 @@ class CompanyRepository
     */
     public function __construct ()
     {
-
+        $this->current = new CurrentPrice();
+        $this->company = new Company();
     }
 
     /**
@@ -41,7 +42,6 @@ class CompanyRepository
     }
     public function price ($request)
     {
-        $this->current = new CurrentPrice();
         switch ($request->act) {
             case 'insert' :
                 $this->priceInsert($request);
@@ -61,7 +61,7 @@ class CompanyRepository
         $endDate = $request->endDate;
         #區間共有幾筆
         $range = $endDate - $beginDate;
-        for($i = 0; $i < $range; $i++) {
+        for($i = 0; $i <= $range; $i++) {
             $date = $beginDate + $i;
             CurrentPrice::create(['date' => $date, 'amount' => $request->amount]);
         }

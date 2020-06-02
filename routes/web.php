@@ -19,13 +19,16 @@ use Illuminate\Support\Facades\Route;
  */
 #首頁
 Route::get('/', 'CompanyController@index'); 
-
-/**
- * 新增/更新資料
- */
+#更新時價
 Route::post('/current', 'CompanyController@price'); 
 
+#廠商資訊
+Route::prefix('/client')->group(function ($router) {
+    #供應
+    $router->get('/supply', 'ClientController@supply');
+    #需求
+    $router->get('/demand', 'ClientController@demand');
+    #新增/修改
+    $router->post('/', 'ClientController@client'); 
 
-/**
- * 刪除資料
- */
+});

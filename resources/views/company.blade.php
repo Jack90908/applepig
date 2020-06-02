@@ -19,10 +19,6 @@
                 border:1px solid #000;
                 padding:5px;
             } 
-            .input {
-                width: 90px;
-                border:0px solid #000;
-            }
             .nowDate {
                 background-color: beige;
             }
@@ -58,11 +54,7 @@
                             <tr>
                                 <th>起始時間</th>
                                 <td class="input">
-                                    <select class="form-control" name="beginDate">
-                                        @for ($i = 1; $i < $dateView; $i++)
-                                        <option>{{$amountDate + $i}}</option>
-                                        @endfor
-                                    </select>
+                                    <input type="text" readonly class="form-control" name="beginDate" value="{{$amountDate + 1}}">
                                 </td>
                                 <th>結束時間</th>
                                 <td class="input">

@@ -86,6 +86,10 @@
                 text-align: center;
                 margin-block-end: auto;
             }
+            .input {
+                width: 90px;
+                border:0px solid #000;
+            }
         </style>
     </head>
     <body>
@@ -94,15 +98,14 @@
             <div class="leftmenu">
                 <p class="applepig">--蘋果豬內部系統--</p>
                 <a href="{{ url('/') }}">雅庫/時價設定</a>
-                <p class="applepig">供應商</p>
-                <a href="{{ url('/supply') }}">供應商基本資訊</a>
-                <a href="{{ url('/supply') }}">新增/修改</a>
-                <p class="applepig">需求商</p>
-                <a href="{{ url('/supply') }}">需求商基本資訊</a>
-                <a href="{{ url('/supply') }}">新增/修改</a>
+                <p class="applepig">廠商</p>
+                <a href="{{ url('/client/supply') }}">供應商基本資訊</a>
+                <a href="{{ url('/client/demand') }}">需求商基本資訊</a>
                 <p class="applepig">交易</p>
                 <a href="{{ url('/supply') }}">進貨</a>
                 <a href="{{ url('/supply') }}">出貨</a>
+                <a href="{{ url('/supply') }}">倉庫</a>
+                <p class="applepig">紀錄</p>
                 <a href="{{ url('/supply') }}">報表</a>
             </div>
         @show
