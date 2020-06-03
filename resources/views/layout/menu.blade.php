@@ -102,14 +102,20 @@
                 <a href="{{ url('/client/supply') }}">供應商基本資訊</a>
                 <a href="{{ url('/client/demand') }}">需求商基本資訊</a>
                 <p class="applepig">交易</p>
-                <a href="{{ url('/supply') }}">進貨</a>
-                <a href="{{ url('/supply') }}">出貨</a>
+                <a href="{{ url('/transaction/buy') }}">進貨</a>
                 <a href="{{ url('/supply') }}">倉庫</a>
+                <a href="{{ url('/supply') }}">出貨</a>
                 <p class="applepig">紀錄</p>
                 <a href="{{ url('/supply') }}">報表</a>
             </div>
         @show
         <div class="container">
+            @include('layout.errors')
+            @if(!empty(session('success')))
+            　　<div class="alert alert-success" role="alert">
+    　　　　        {{session('success')}}
+            　　</div>
+            @endif
             @yield('content')
         </div>
     </body>

@@ -51,6 +51,6 @@ class CompanyController extends Controller
                 ->withErrors($validator);
         }
         $this->repo->price($request);
-        return redirect('/');
+        return redirect('/')->with('success','操作成功');
     }
 }

@@ -17,7 +17,7 @@ class ClientRepository
     public function clientFetch ($identity)
     {
         $res = Client::where('identity', $identity)->get();
-        if ($res->isEmpty()) $res = false;
+        if (!$res) $res = false;
         return $res;
     }
     public function client ($request)

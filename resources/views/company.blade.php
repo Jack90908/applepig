@@ -27,7 +27,6 @@
     <body>
         @section('sidebar')
         @section('content')
-            @include('layout.errors')
             <!-- 公司資訊 -->
             <div class="companyData">
                 <h1 class="content">公司資訊<h1>
@@ -122,6 +121,5 @@
             document.getElementById(amount).disabled = true
             document.getElementById(submit).disabled = true
         }
-
     }
 </script>

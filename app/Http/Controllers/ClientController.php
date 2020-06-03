@@ -44,6 +44,6 @@ class ClientController extends Controller
     {
         $this->repo->client($request);
         $url = '/client/' . $request->identity;
-        return redirect($url);
+        return redirect($url)->with('success','操作成功');;
     }
 }

@@ -52,7 +52,7 @@
                     </table>
                 </form>
             </div>
-            <!-- 新增 -->
+            <!-- 清單 -->
             <div class="clientDate">
                 <h1 class="content">{{$identityName}}廠商</h1>
                 @if (!$clientList)
