@@ -37,4 +37,7 @@ Route::prefix('/transaction')->group(function ($router) {
     #進貨
     $router->get('/buy', 'TransactionController@buy');
     $router->post('/buy', 'TransactionController@buyData');
+    #倉庫
+    $router->get('/depot', 'TransactionController@depot');
+    $router->post('/depot', 'TransactionController@depotData');
 });

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <script src="/js/app.js"></script>
+        <script src="/js/jquery.js"></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -42,7 +44,9 @@
             .title {
                 font-size: 84px;
             }
-
+            .trTitle {
+                background-color: gainsboro;
+            }
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -93,17 +97,16 @@
         </style>
     </head>
     <body>
-    <script src="/js/app.js"></script>
         @section('sidebar')
             <div class="leftmenu">
                 <p class="applepig">--蘋果豬內部系統--</p>
-                <a href="{{ url('/') }}">雅庫/時價設定</a>
+                <a href="{{ url('/') }}">時價設定</a>
                 <p class="applepig">廠商</p>
                 <a href="{{ url('/client/supply') }}">供應商基本資訊</a>
                 <a href="{{ url('/client/demand') }}">需求商基本資訊</a>
                 <p class="applepig">交易</p>
                 <a href="{{ url('/transaction/buy') }}">進貨</a>
-                <a href="{{ url('/supply') }}">倉庫</a>
+                <a href="{{ url('/transaction/depot') }}">倉庫</a>
                 <a href="{{ url('/supply') }}">出貨</a>
                 <p class="applepig">紀錄</p>
                 <a href="{{ url('/supply') }}">報表</a>

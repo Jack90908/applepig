@@ -94,7 +94,7 @@
                     <p>目前無進貨資料</p>
                 @else
                 <table>
-                    <tr>
+                    <tr class="trTitle">
                         <td>進貨編號</td>
                         <td>廠商名稱</td>
                         <td>種類</td>

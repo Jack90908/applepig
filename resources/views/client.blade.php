@@ -59,7 +59,7 @@
                     <p>目前無廠商資料</p>
                 @else
                 <table>
-                    <tr>
+                    <tr class="trTitle">
                         <td>公司名稱</td>
                         <td>地址</td>
                         <td>電話</td>

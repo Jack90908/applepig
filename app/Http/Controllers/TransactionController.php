@@ -38,4 +38,21 @@ class TransactionController extends Controller
         $this->tranRepo->buyData($request);
         return redirect('/transaction/buy')->with('success','操作成功');
     }
+
+    public function depot ()
+    {
+        $depotList = $this->tranRepo->depotFetch();
+        $buyData = $this->tranRepo->suplusFetch();
+        $res = [
+            'depotList',
+            'buyData',
+        ];
+        return view('depot', compact($res));
+    }
+
+    public function depotData (Request $request)
+    {
+        $this->tranRepo->depotData($request);
+        return redirect('/transaction/depot')->with('success','入庫成功');
+    }
 }

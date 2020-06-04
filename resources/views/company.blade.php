@@ -77,7 +77,7 @@
                 <!-- 修改 -->
                 <label for="task" class="col-sm-3 control-label">當前時價</label>
                 <table>
-                    <tr>
+                    <tr class="trTitle">
                         <td>修改</td>
                         <td>日期</td>
                         <td>時價</td>
